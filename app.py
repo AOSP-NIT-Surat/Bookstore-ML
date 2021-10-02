@@ -1,10 +1,11 @@
 from flask import Flask, request
 from flask_sqlalchemy import SQLAlchemy
 import os
+
 app = Flask(__name__)
-s = os.environ.get("DATABASE_URL")
-s = 'postgresql+psycopg2:/' + s[s.find('/')+1:]
-app.config['SQLALCHEMY_DATABASE_URI'] = s
+database_url = os.environ.get("DATABASE_URL")
+database_url = 'postgresql+psycopg2:/' + database_url[database_url.find('/')+1:]
+app.config['SQLALCHEMY_DATABASE_URI'] = database_url
 db = SQLAlchemy(app)
 
 from db.tables import user

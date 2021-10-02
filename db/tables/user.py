@@ -1,6 +1,6 @@
 from app import db
 
-class User(db.Model):
+class UserTable(db.Model):
     __tablename__ = 'User'
 
     username = db.Column(db.String(256),primary_key=True)
