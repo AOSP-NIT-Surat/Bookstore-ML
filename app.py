@@ -3,9 +3,9 @@ from flask_sqlalchemy import SQLAlchemy
 import os
 
 app = Flask(__name__)
-database_url = os.environ.get("DATABASE_URL")
-database_url = 'postgresql+psycopg2:/' + database_url[database_url.find('/')+1:]
-app.config['SQLALCHEMY_DATABASE_URI'] = database_url
+db_url = os.environ.get("DATABASE_URL")
+db_url = 'postgresql+psycopg2:/' + db_url[db_url.find('/')+1:]
+app.config['SQLALCHEMY_DATABASE_URI'] = db_url
 db = SQLAlchemy(app)
 
 from db.tables import user
