@@ -18,3 +18,4 @@ img='test.jpg'
 dicti={}
 dicti=image(img)
 print(dicti)
+
