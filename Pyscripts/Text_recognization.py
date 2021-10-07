@@ -13,9 +13,3 @@ def image(img):
     dict={}
     dict=isbnlib.meta(str(get_isbn))
     return dict
-
-img='test.jpg'
-dicti={}
-dicti=image(img)
-print(dicti)
-
